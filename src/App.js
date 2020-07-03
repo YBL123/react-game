@@ -24,17 +24,22 @@ class App extends React.Component {
   }
 
 
-  // componentDidMount() {
-  //   this.initiateGame()
-  // }
+  componentDidMount() {
+    this.initiateGame()
+  }
 
   //* game initiation. When start button is clicked menu is hidden and game grid becomes visible - then game loads
   initiateGame = () => {
+    const gameMenu = document.querySelector('.game-menu')
+    const gameWrapper = document.querySelector('.game-wrapper')
+    const gameOver = document.querySelector('.game-over')
+    const gameWon = document.querySelector('.game-won')
+
     // highScoreTable.style.display = 'none'
-    this.gameMenu.style.display = 'none'
-    this.gameWrapper.style.display = 'flex'
-    this.gameOver.style.display = 'none'
-    this.gameWon.style.display = 'none'
+    gameMenu.style.display = 'none'
+    gameWrapper.style.display = 'flex'
+    gameOver.style.display = 'none'
+    gameWon.style.display = 'none'
     // gameSounds = new Sounds()
     // gameSounds.playBackgroundSound()  //* play background sound
     this.startGame() //* Start Game function called here
@@ -84,7 +89,7 @@ class App extends React.Component {
         <input type="button" className="difficulty-button" value="hard"/>
       </div>
       <div className="start-game-button">
-        <button onClick={this.initiateGame}  id={this.startButton}>Start!</button>
+        <button onClick={this.initiateGame} id={this.startButton}>Start!</button>
       </div>
     </div>
 
@@ -132,7 +137,7 @@ class App extends React.Component {
 
       <div className="high-score-table">
       <div>
-        <h1>High Score</h1>
+        {/* <h1>High Score</h1> */}
       </div>
       <div className="score-table">
       </div>
