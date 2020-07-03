@@ -5,25 +5,36 @@ import gameOverImage from './assets/game-over-art.png'
 
 class App extends React.Component {
   state = {
+    gameMenu: '.game-menu',
+    gameWon: '.game-won',
+    gameOver: '.game-over',
+    startButton: '#start',
+    resetButton: '#reset',
+    playAgainButton: 'play-again-button',
+    difficultyButtons: 'difficulty-button',
+    scoreDisplay: '#score-display',
+    remainingLives: '#player-lives',
+
     grid: '.grid',
     gameWrapper: '.game-wrapper',
     cells: [],
     width: 9,
     cellCount: (this.width * this.width) + (this.width * 2)
+    
   }
 
 
-  componentDidMount() {
-    this.initiateGame()
-  }
+  // componentDidMount() {
+  //   this.initiateGame()
+  // }
 
   //* game initiation. When start button is clicked menu is hidden and game grid becomes visible - then game loads
   initiateGame = () => {
     // highScoreTable.style.display = 'none'
-    // gameMenu.style.display = 'none'
-    // gameWrapper.style.display = 'flex'
-    // gameOver.style.display = 'none'
-    // gameWon.style.display = 'none'
+    this.gameMenu.style.display = 'none'
+    this.gameWrapper.style.display = 'flex'
+    this.gameOver.style.display = 'none'
+    this.gameWon.style.display = 'none'
     // gameSounds = new Sounds()
     // gameSounds.playBackgroundSound()  //* play background sound
     this.startGame() //* Start Game function called here
@@ -35,7 +46,7 @@ class App extends React.Component {
     // style()
     // document.getElementById('player-lives').innerHTML = playerLives
     // document.getElementById('score-display').innerHTML = playerScore
-    // // * Event listeners
+    // * Event listeners
     // window.addEventListener('keydown', handleKeyDown)
     // addPlayer('flareonIdle') //* adds player
     // loopGame() //* loops game
@@ -48,14 +59,14 @@ class App extends React.Component {
       const cell = this.grid
       this.grid.appendChild(cell)
       this.cells.push(cell)
-      cell.textContent = i //take out later
+      // cell.textContent = i //take out later
     }
   }
 
 
   render() {
     return (
-<body>
+<section>
   <div className="container">
 
     <div className="game-menu">
@@ -73,7 +84,7 @@ class App extends React.Component {
         <input type="button" className="difficulty-button" value="hard"/>
       </div>
       <div className="start-game-button">
-        <button id="start">Start!</button>
+        <button onClick={this.initiateGame}  id={this.startButton}>Start!</button>
       </div>
     </div>
 
@@ -131,7 +142,7 @@ class App extends React.Component {
   
   <audio></audio>
   
-</body>
+</section>
     )
   }
 }

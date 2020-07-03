@@ -245,7 +245,7 @@ body {
 }
 
 .grid div {
-  /* border: 1px solid lightgrey; */
+  border: 1px solid lightgrey; 
   flex-grow: 1;
   height: 9.09090909091%;
   width: 11.1111111111%;
@@ -289,40 +289,39 @@ body {
 }
     
     /* flareon */ 
-// .grid div.flareonIdle {
-//   background-image: url('../assets/flareonIdle.gif');
-//   background-repeat: no-repeat;
-//   background-size: contain;
-//   cursor: pointer;
-// }
+.grid div.flareonIdle {
+  background-image: url('/src/assets/flareonIdle.gif');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
 
-// .grid div.flareonRunRight {
-//   background-image: url('../assets/flareonRight.gif');
-//   background-repeat: no-repeat;
-//   background-size: contain;
-//   cursor: pointer;
-// }
+.grid div.flareonRunRight {
+  background-image: url('/src/assets/flareonRight.gif');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+} 
+.grid div.flareonRunLeft {
+  background-image: url('/src/assets/flareonLeft.gif');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
 
-// .grid div.flareonRunLeft {
-//   background-image: url('../assets/flareonLeft.gif');
-//   background-repeat: no-repeat;
-//   background-size: contain;
-//   cursor: pointer;
-// }
+.grid div.flareonRunUp {
+  background-image: url('/src/assets/flareonUp.gif');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
 
-// .grid div.flareonRunUp {
-//   background-image: url('../assets/flareonUp.gif');
-//   background-repeat: no-repeat;
-//   background-size: contain;
-//   cursor: pointer;
-// }
-
-// .grid div.flareonRunDown {
-//   background-image: url('../assets/flareonUp.gif');
-//   background-repeat: no-repeat;
-//   background-size: contain;
-//   cursor: pointer;
-// }
+.grid div.flareonRunDown {
+  background-image: url('/src/assets/flareonUp.gif');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  }
 
 // /* enemies */
 // .grid div.lugiaEnemy {
