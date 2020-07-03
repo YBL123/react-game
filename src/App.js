@@ -1,10 +1,15 @@
 import React from 'react'
 
+//* Images
 import menuArt from './assets/menu-art.png'
 import gameOverImage from './assets/game-over-art.png'
+import flareona from './assets/flareonIdle.gif'
 
 class App extends React.Component {
   state = {
+
+    activeFlareon: ['flareonIdle', 'flareonRight', 'flareonLeft', 'flareonUp'],
+
     gameMenu: '.game-menu',
     gameWon: '.game-won',
     gameOver: '.game-over',
@@ -15,31 +20,20 @@ class App extends React.Component {
     scoreDisplay: '#score-display',
     remainingLives: '#player-lives',
 
-    // grid: '.grid',
-    // gameWrapper: '.game-wrapper',
-    // cells: [],
-    // width: 9,
-    // cellCount: (this.width * this.width) + (this.width * 2)
+    //* Grid Variables
+    width: 9,
+    cells: [],
 
+    //* Game Variables
+    startingPosition: 94,
+    flareonPosition: 94
   }
+
 
   getData = () => {
-    // // * Grid variables
-    // const width = 9
-    // const cellCount = (width * width) + (width * 2)
-    // let cells = []
-    // const grid = document.querySelector('.grid')
-    // for (let i = 0; i < cellCount; i++) {
-    //   const cell = grid
-    //   grid.appendChild(cell)
-    //   cells.push(cell)
-    // }
   }
 
-
   componentDidMount() {
-    // this.initiateGame()
-    // this.getData()
   }
 
   //* game initiation. When start button is clicked menu is hidden and game grid becomes visible - then game loads
@@ -62,12 +56,12 @@ class App extends React.Component {
   // * Game Functions
   startGame = () => {
     this.createGrid()
-    // style()
+    // this.style()
     // document.getElementById('player-lives').innerHTML = playerLives
     // document.getElementById('score-display').innerHTML = playerScore
     // * Event listeners
-    // window.addEventListener('keydown', handleKeyDown)
-    // addPlayer('flareonIdle') //* adds player
+    window.addEventListener('keydown', this.handleKeyDown)
+    this.addPlayer('flareonIdle') //* adds player
     // loopGame() //* loops game
   }
 
@@ -81,11 +75,58 @@ class App extends React.Component {
     const cellCount = (width * width) + (width * 2)
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
+      cell.textContent = i //take out later
       grid.appendChild(cell)
       cells.push(cell)
-      // cell.textContent = i //take out later
+    }
+    // this.cells[this.startingPosition].setState({activeFlareon: 'flareonIdle'});
+  }
+
+  //* handle key down function starts here 
+  handleKeyDown = (event) => {
+    //* remove float and flareon whether right or left if present. add Only right or left float image.
+    const x = this.flareonPosition % this.width
+    const y = Math.floor(this.flareonPosition / this.width)
+    switch (event.keyCode) { // * calculate the new index
+      case 39:
+        if ((x < this.width - 1) && (!this.cells[this.flareonPosition + 1].classList.contains('flareona'))) { //* if a flareona class is not present within cell's index if going right you may go in. If there is you may not.
+          // resetFlareonOnFloat()
+          this.flareonPosition++ //* right 
+          this.addPlayer('flareonRunRight')
+        }
+        break
+      case 37:
+        if ((x > 0) && (!this.cells[this.flareonPosition - 1].classList.contains('flareona'))) { //* if a flareona class is not present within cell's index if going left, you may go in. If there is you may not.
+          // resetFlareonOnFloat()
+          this.flareonPosition-- //* left
+          this.addPlayer('flareonRunLeft')
+        }
+        break
+      case 38:
+        if ((y > 0) && (!this.cells[this.flareonPosition - this.width].classList.contains('flareona'))) { //* if a flareona class is not present within cell's index if going up, you may go in. If there is you may not.
+          // resetFlareonOnFloat()
+          this.flareonPosition -= this.width //* up
+          // playerScore += 50  //* but need to fix it so it doesn't add points if you move down and up again
+          // scoreDisplay.textContent = playerScore 
+          this.addPlayer('flareonRunUp')
+        }
+        break
+      case 40:
+        if (y < this.width + 1) {
+          // resetFlareonOnFloat()
+          this.flareonPosition += this.width //* down
+          this.addPlayer('flareonRunDown')
+        }
+        break
+      default:
+        console.log('invalid key do nothing') //* comment out later
     }
   }
+
+      //* add player function starts here
+      addPlayer = (playerDirection) => {  
+        // this.cells[this.flareonPosition].classList.add(playerDirection, 'flareona' ) 
+      }
 
 
   render() {
