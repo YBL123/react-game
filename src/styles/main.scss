@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'machine-gunk';
+  src: url('/src/fonts/MachineGunk.ttf')
+}
+
+@font-face {
+  font-family: 'atari-classic-chucnky';
+  src: url('/src/fonts/AtariClassicChunky.ttf')
+}
+
+$family-sans-serif: 'Bowlby One SC', sans-serif;
+
 * {
   box-sizing: border-box;
 }
@@ -16,10 +28,207 @@ body {
   padding: 20px;
 }
 
+.game-menu {
+  display: flex;    
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 85vh;
+  width: 60%;
+  padding: 50px;
+  color: blanchedalmond;
+  background-color: #072540;
+}
+
+.game-title-flareon-h1 {
+    margin: 0;
+    margin-bottom: 0;
+    font-size: 80px;
+    font-family: 'machine-gunk';
+    letter-spacing: 8px;
+    color: gold;
+}
+
+.game-title-flareon-h2 {
+  margin: 0 30px 0px 180px;
+  font-style: italic;
+  font-family: 'machine-gunk';
+  font-size: 30px;
+  letter-spacing: 3px;
+  color: darkred;
+}
+
+.game-menu .game-menu-image {
+  height: 180px;
+}
+
+.game-menu .difficulty {
+  padding: 0px 0 22px;
+}
+
+.game-menu .game-instructions {
+  margin: 0;
+  font-family: monospace;
+  font-size: 13px;
+  display: block;
+  height: 200px;
+}
+
+.active-button {
+  background-color: gold;
+
+}
+
+.game-menu .difficulty-button {
+  font-family: 'machine-gunk';
+  letter-spacing: 3px;
+  padding: 15px;
+  border: none;
+  box-shadow: none;
+  font-size: 15px;
+  margin: 0 12px;
+  border-radius: 5px;
+  min-width: 100px;
+}
+
+.game-menu .difficulty-button:hover {
+  background-color: lightskyblue;
+}
+
+.game-menu .start-game-button button {
+  font-family: 'machine-gunk';
+  letter-spacing: 3px;
+  background-color: lightskyblue;
+  padding: 15px;
+  min-width: 180px;
+  border: none;
+  box-shadow: none;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  color: black;
+}
+
+.game-menu .start-game-button button:hover {
+  background-color: gold;
+}
+
+
+
+.game-won {
+  display: none;     /* should be flex   */
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 85vh;
+  width: 60%;
+  padding: 50px;
+  color: blanchedalmond;
+  background-color: #072540;
+}
+
+.game-won h1 {
+  font-family: 'machine-gunk';
+  letter-spacing: 8px;
+  color: gold;
+  font-size: 50px;
+  margin: 0;
+}
+
+.game-won .final-score2 {
+  margin-bottom: 20px;
+  font-family: 'atari-classic-chucnky';
+  color: greenyellow;
+}
+
+.game-won div {
+  /* height: 100px; */
+  margin-bottom: 15px;
+}
+
+.game-won .game-menu-image {
+  height: 250px;
+  margin-bottom: 20px;
+}
+
+.game-won button {
+  font-family: 'machine-gunk';
+  letter-spacing: 3px;
+  color: black;
+  background-color: lightskyblue;
+  padding: 15px;
+  min-width: 180px;
+  border: none;
+  box-shadow: none;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.game-won button:hover {
+  background-color: gold;
+}
+
+.game-over {
+  display: none;     /* should be flex   */
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 85vh;
+  width: 60%;
+  color: blanchedalmond;
+  background-color: #072540;
+}
+
+.game-over h1 {
+  font-family: 'machine-gunk';
+  font-size: 90px;
+  letter-spacing: 8px;
+  color: darkred;
+  margin: 0;
+}
+
+.game-over div {
+  margin: 10px;
+}
+
+.game-over button {
+  font-family: 'machine-gunk';
+  letter-spacing: 3px;
+  background-color: lightskyblue;
+  padding: 15px;
+  min-width: 180px;
+  border: none;
+  box-shadow: none;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  color: black;
+}
+.game-over button:hover {
+  background-color: gold;
+}
+
+.game-over .final-score {
+  height: 0;
+  margin: 10px;
+  font-family: 'atari-classic-chucnky';
+  color: greenyellow;
+}
+
+.game-over .game-menu-image {
+  height: 300px;
+}
+
+
+
 
 .game-wrapper {
   height: 90vh;
-  display: flex;  /* should be flex */
+  display: none;  /* should be flex */
   flex-direction: column;
   align-items: center;
 }
@@ -35,9 +244,199 @@ body {
   width: 600px;
 }
 
-.grid2 {
-  border: 1px solid lightgrey; 
+.grid div {
+  /* border: 1px solid lightgrey; */
   flex-grow: 1;
   height: 9.09090909091%;
   width: 11.1111111111%;
 }
+
+.controls-wrapper {
+  font-family: 'atari-classic-chucnky';
+  letter-spacing: 2px;
+  align-items: unset;
+  align-self: stretch;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-around;
+  background-color: #072540;
+  padding: 10px;
+  margin-bottom: 0;
+}
+
+.controls-wrapper p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: floralwhite;
+}
+
+.reset-button button {
+  font-family: 'machine-gunk';
+  letter-spacing: 3px;
+  background-color: lightskyblue;
+  font-size: 16px;
+  margin-top: 7px;
+  min-width: 80px;
+  padding: 10px;
+  border: none;
+  box-shadow: none;
+  border-radius: 5px;
+}
+
+.reset-button button:hover {
+  background-color: gold;
+}
+    
+    /* flareon */ 
+// .grid div.flareonIdle {
+//   background-image: url('../assets/flareonIdle.gif');
+//   background-repeat: no-repeat;
+//   background-size: contain;
+//   cursor: pointer;
+// }
+
+// .grid div.flareonRunRight {
+//   background-image: url('../assets/flareonRight.gif');
+//   background-repeat: no-repeat;
+//   background-size: contain;
+//   cursor: pointer;
+// }
+
+// .grid div.flareonRunLeft {
+//   background-image: url('../assets/flareonLeft.gif');
+//   background-repeat: no-repeat;
+//   background-size: contain;
+//   cursor: pointer;
+// }
+
+// .grid div.flareonRunUp {
+//   background-image: url('../assets/flareonUp.gif');
+//   background-repeat: no-repeat;
+//   background-size: contain;
+//   cursor: pointer;
+// }
+
+// .grid div.flareonRunDown {
+//   background-image: url('../assets/flareonUp.gif');
+//   background-repeat: no-repeat;
+//   background-size: contain;
+//   cursor: pointer;
+// }
+
+// /* enemies */
+// .grid div.lugiaEnemy {
+//   background-image: url('../assets/lugia.gif');
+//   background-repeat: no-repeat;
+//   background-size: contain;
+//   cursor: pointer;
+// }
+
+// .grid div.lugia2Enemy {
+//   background-image: url('../assets/lugia2.gif');
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   cursor: pointer;
+// }
+
+// /* collision gif */
+// .grid div.collision {
+//   background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4ddabef1-8390-424a-a828-f61e4df3d499/d4vvtsd-9198838a-133c-478e-ba7b-9d2b9b5f4401.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzRkZGFiZWYxLTgzOTAtNDI0YS1hODI4LWY2MWU0ZGYzZDQ5OVwvZDR2dnRzZC05MTk4ODM4YS0xMzNjLTQ3OGUtYmE3Yi05ZDJiOWI1ZjQ0MDEuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.AyH_iQH-ECxX0-9n9hJyitTpc3UG-cfryOZ9qFp7euE');
+//   background-repeat: no-repeat;
+//   background-size: contain;
+//   cursor: pointer;
+// }
+
+// /* floats */
+// .grid div.float-left {
+//   background-image: url('../assets/float-left.png');
+//   background-repeat: no-repeat;
+//   background-size: contain;
+//   background-position: bottom;
+//   cursor: pointer;
+// }
+
+// .grid div.float-right {
+//   background-image: url('../assets/float-right.png');
+//   background-repeat: no-repeat;
+//   background-size: contain;
+//   background-position: bottom;
+//   cursor: pointer;
+// }
+
+// /* float and flareon together */
+// .grid div.floatAndFlareonLeft {
+//   background-image: url('../assets/flareonIdle.gif'), url('../assets/float-left.png');
+//   background-size: contain;
+//   background-position: bottom;
+//   background-repeat: no-repeat, no-repeat;
+// }
+
+// .grid div.floatAndFlareonRight {
+//   background-image: url('../assets/flareonIdle.gif'), url('../assets/float-right.png');
+//   background-size: contain;
+//   background-position: bottom;
+//   background-repeat: no-repeat, no-repeat;
+// }
+
+// /* .grid div.water {
+//   background-color: teal;
+// } */
+
+// .grid div.splash {
+//   background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/45f6d1cf-c850-4089-9394-2fa0d3c6f6de/d3l54k6-ba906ca2-a0c9-443a-a3cb-585b923b4b5f.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzQ1ZjZkMWNmLWM4NTAtNDA4OS05Mzk0LTJmYTBkM2M2ZjZkZVwvZDNsNTRrNi1iYTkwNmNhMi1hMGM5LTQ0M2EtYTNjYi01ODViOTIzYjRiNWYuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.vRxg3ueSyzWtLh9nZtwHFZHuUNtUkuCoLNkcJEdImyo');  /* would need to add assets/rock.png */
+//   background-repeat: no-repeat;
+//   background-size: contain;
+//   cursor: pointer;
+// }
+
+// .coin {
+//   background-image: url('https://i.gifer.com/Z3ur.gif');
+//   background-size: contain;
+//   background-position: bottom;
+//   background-repeat: no-repeat, no-repeat;
+// }
+
+/* .high-score-table {
+  display: none;     
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 85vh;
+  width: 60%;
+  padding: 50px;
+  color: blanchedalmond;
+  background-color: #072540;
+} */
+
+/* .game-won .score-input input {
+  background-color: transparent;
+  border-bottom: 1px solid gold;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: #adff2e;
+  font-size: 14px;
+  box-shadow: none;
+  outline: none;
+  font-family: 'atari classic chunky';
+  line-height: 2;
+  margin: 5px 0;
+}
+
+.score-input {
+  font-family: 'atari classic chunky';
+  font-size: 12px;
+  color: #adff2e;
+}
+
+.high-score-table h1 {
+  font-family: 'machine gunk';
+    font-size: 80px;
+    color: gold;
+}
+
+.high-score-table .score-table div {
+font-family: 'atari classic chunky';
+} */
