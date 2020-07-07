@@ -98,11 +98,12 @@ class App extends React.Component {
     remainingLives: '#player-lives',
 
     //* Grid Variables
-    grid: '.grid',
+    grid: document.querySelector('.grid'),
+    // grid: '.grid',
     width: 9,
     cells: [],
     cell: document.createElement('div'),
-    cellCount: (this.width * this.width),
+    cellCount: (this.width * this.width) + (this.width * 2),
 
     //* Game Variables
     startingPosition: 94,
@@ -154,10 +155,15 @@ class App extends React.Component {
   //* creates grid and then cells
   createGrid = () => {
     // * Grid variables
-    for (let i = 0; i < this.cellCount; i++) {
-      this.cell.textContent = i //take out later
-      this.grid.appendChild(this.cell)
-      this.cells.push(this.cell)
+    const grid = document.querySelector('.grid')
+    let cells = []
+    const width = 9
+    const cellCount = (width * width) + (width * 2)
+    for (let i = 0; i < cellCount; i++) {
+      const cell = document.createElement('div')
+      cell.textContent = i //take out later
+      grid.appendChild(cell)
+      cells.push(cell)
     }
 
     console.log('this is cells', this.cells)
@@ -206,10 +212,10 @@ class App extends React.Component {
     }
   }
 
-      //* add player function starts here
-      addPlayer = (playerDirection) => {  
-        // this.cells[this.flareonPosition].classList.add(playerDirection, 'flareona' ) 
-      }
+  //* add player function starts here
+  addPlayer = (playerDirection) => {
+    // this.cells[this.flareonPosition].classList.add(playerDirection, 'flareona' ) 
+  }
 
 
   render() {
