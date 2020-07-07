@@ -1,60 +1,3 @@
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  height: 100vh;
-  margin: 0;
-}
-
-
-.grid-wrapper {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.grid {
-  align-items: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-wrap: wrap;
-  height: 100%;
-  justify-content: center;
-  height: 600px;
-  width: 600px;
-}
-
-.grid div {
-  border: 1px solid lightgrey;
-  flex-grow: 1;
-  height: 10%;
-  width: 10%;
-}
-
-.grid div.flareonIdle {
-  background-color: red;
-  // background-image: url('/src/assets/flareonIdle.gif');
-  background-repeat: no-repeat;
-  background-size: contain;
-  cursor: pointer;
-}
-
-
-// @font-face {
-//   font-family: 'machine-gunk';
-//   src: url('/src/fonts/MachineGunk.ttf')
-// }
-
-// @font-face {
-//   font-family: 'atari-classic-chucnky';
-//   src: url('/src/fonts/AtariClassicChunky.ttf')
-// }
-
-// $family-sans-serif: 'Bowlby One SC', sans-serif;
-
 // * {
 //   box-sizing: border-box;
 // }
@@ -62,219 +5,13 @@ body {
 // body {
 //   height: 100vh;
 //   margin: 0;
-//   background-color: #2b669b;
 // }
 
-// .container {
+
+// .grid-wrapper {
+//   height: 100vh;
 //   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   margin: 10px;
-//   padding: 20px;
-// }
-
-// .game-menu {
-//   display: flex;    
-//   flex-direction: column;
 //   justify-content: center;
-//   align-items: center;
-//   text-align: center;
-//   height: 85vh;
-//   width: 60%;
-//   padding: 50px;
-//   color: blanchedalmond;
-//   background-color: #072540;
-// }
-
-// .game-title-flareon-h1 {
-//     margin: 0;
-//     margin-bottom: 0;
-//     font-size: 80px;
-//     font-family: 'machine-gunk';
-//     letter-spacing: 8px;
-//     color: gold;
-// }
-
-// .game-title-flareon-h2 {
-//   margin: 0 30px 0px 180px;
-//   font-style: italic;
-//   font-family: 'machine-gunk';
-//   font-size: 30px;
-//   letter-spacing: 3px;
-//   color: darkred;
-// }
-
-// .game-menu .game-menu-image {
-//   height: 180px;
-// }
-
-// .game-menu .difficulty {
-//   padding: 0px 0 22px;
-// }
-
-// .game-menu .game-instructions {
-//   margin: 0;
-//   font-family: monospace;
-//   font-size: 13px;
-//   display: block;
-//   height: 200px;
-// }
-
-// .active-button {
-//   background-color: gold;
-
-// }
-
-// .game-menu .difficulty-button {
-//   font-family: 'machine-gunk';
-//   letter-spacing: 3px;
-//   padding: 15px;
-//   border: none;
-//   box-shadow: none;
-//   font-size: 15px;
-//   margin: 0 12px;
-//   border-radius: 5px;
-//   min-width: 100px;
-// }
-
-// .game-menu .difficulty-button:hover {
-//   background-color: lightskyblue;
-// }
-
-// .game-menu .start-game-button button {
-//   font-family: 'machine-gunk';
-//   letter-spacing: 3px;
-//   background-color: lightskyblue;
-//   padding: 15px;
-//   min-width: 180px;
-//   border: none;
-//   box-shadow: none;
-//   border-radius: 5px;
-//   font-size: 15px;
-//   font-weight: 500;
-//   color: black;
-// }
-
-// .game-menu .start-game-button button:hover {
-//   background-color: gold;
-// }
-
-
-
-// .game-won {
-//   display: none;     /* should be flex   */
-//   justify-content: center;
-//   flex-direction: column;
-//   align-items: center;
-//   text-align: center;
-//   height: 85vh;
-//   width: 60%;
-//   padding: 50px;
-//   color: blanchedalmond;
-//   background-color: #072540;
-// }
-
-// .game-won h1 {
-//   font-family: 'machine-gunk';
-//   letter-spacing: 8px;
-//   color: gold;
-//   font-size: 50px;
-//   margin: 0;
-// }
-
-// .game-won .final-score2 {
-//   margin-bottom: 20px;
-//   font-family: 'atari-classic-chucnky';
-//   color: greenyellow;
-// }
-
-// .game-won div {
-//   /* height: 100px; */
-//   margin-bottom: 15px;
-// }
-
-// .game-won .game-menu-image {
-//   height: 250px;
-//   margin-bottom: 20px;
-// }
-
-// .game-won button {
-//   font-family: 'machine-gunk';
-//   letter-spacing: 3px;
-//   color: black;
-//   background-color: lightskyblue;
-//   padding: 15px;
-//   min-width: 180px;
-//   border: none;
-//   box-shadow: none;
-//   border-radius: 5px;
-//   font-size: 15px;
-//   font-weight: 500;
-// }
-
-// .game-won button:hover {
-//   background-color: gold;
-// }
-
-// .game-over {
-//   display: none;     /* should be flex   */
-//   justify-content: center;
-//   flex-direction: column;
-//   align-items: center;
-//   text-align: center;
-//   height: 85vh;
-//   width: 60%;
-//   color: blanchedalmond;
-//   background-color: #072540;
-// }
-
-// .game-over h1 {
-//   font-family: 'machine-gunk';
-//   font-size: 90px;
-//   letter-spacing: 8px;
-//   color: darkred;
-//   margin: 0;
-// }
-
-// .game-over div {
-//   margin: 10px;
-// }
-
-// .game-over button {
-//   font-family: 'machine-gunk';
-//   letter-spacing: 3px;
-//   background-color: lightskyblue;
-//   padding: 15px;
-//   min-width: 180px;
-//   border: none;
-//   box-shadow: none;
-//   border-radius: 5px;
-//   font-size: 15px;
-//   font-weight: 500;
-//   color: black;
-// }
-// .game-over button:hover {
-//   background-color: gold;
-// }
-
-// .game-over .final-score {
-//   height: 0;
-//   margin: 10px;
-//   font-family: 'atari-classic-chucnky';
-//   color: greenyellow;
-// }
-
-// .game-over .game-menu-image {
-//   height: 300px;
-// }
-
-
-
-
-// .game-wrapper {
-//   height: 90vh;
-//   display: none;  /* should be flex */
-//   flex-direction: column;
 //   align-items: center;
 // }
 
@@ -285,88 +22,349 @@ body {
 //   flex-wrap: wrap;
 //   height: 100%;
 //   justify-content: center;
-//   height: 590px;
+//   height: 600px;
 //   width: 600px;
 // }
 
 // .grid div {
-//   border: 1px solid lightgrey; 
+//   border: 1px solid lightgrey;
 //   flex-grow: 1;
-//   height: 9.09090909091%;
-//   width: 11.1111111111%;
+//   height: 10%;
+//   width: 10%;
 // }
 
-// .controls-wrapper {
-//   font-family: 'atari-classic-chucnky';
-//   letter-spacing: 2px;
-//   align-items: unset;
-//   align-self: stretch;
-//   margin-bottom: 12px;
-//   display: flex;
-//   justify-content: space-around;
-//   background-color: #072540;
-//   padding: 10px;
-//   margin-bottom: 0;
-// }
-
-// .controls-wrapper p {
-//   margin: 0;
-//   font-size: 18px;
-//   font-weight: 500;
-//   color: floralwhite;
-// }
-
-// .reset-button button {
-//   font-family: 'machine-gunk';
-//   letter-spacing: 3px;
-//   background-color: lightskyblue;
-//   font-size: 16px;
-//   margin-top: 7px;
-//   min-width: 80px;
-//   padding: 10px;
-//   border: none;
-//   box-shadow: none;
-//   border-radius: 5px;
-// }
-
-// .reset-button button:hover {
-//   background-color: gold;
-// }
-    
-//     /* flareon */ 
-// .grid div.flareonIdle {
+// .grid div.flareon {
 //   background-image: url('/src/assets/flareonIdle.gif');
 //   background-repeat: no-repeat;
 //   background-size: contain;
 //   cursor: pointer;
 // }
 
-// .grid div.flareonRunRight {
-//   background-image: url('/src/assets/flareonRight.gif');
-//   background-repeat: no-repeat;
-//   background-size: contain;
-//   cursor: pointer;
-// } 
-// .grid div.flareonRunLeft {
-//   background-image: url('/src/assets/flareonLeft.gif');
-//   background-repeat: no-repeat;
-//   background-size: contain;
-//   cursor: pointer;
-// }
 
-// .grid div.flareonRunUp {
-//   background-image: url('/src/assets/flareonUp.gif');
-//   background-repeat: no-repeat;
-//   background-size: contain;
-//   cursor: pointer;
-// }
+@font-face {
+  font-family: 'machine-gunk';
+  src: url('/src/fonts/MachineGunk.ttf')
+}
 
-// .grid div.flareonRunDown {
-//   background-image: url('/src/assets/flareonUp.gif');
-//   background-repeat: no-repeat;
-//   background-size: contain;
-//   cursor: pointer;
-//   }
+@font-face {
+  font-family: 'atari-classic-chucnky';
+  src: url('/src/fonts/AtariClassicChunky.ttf')
+}
+
+$family-sans-serif: 'Bowlby One SC', sans-serif;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  background-color: #2b669b;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding: 20px;
+}
+
+.game-menu {
+  display: flex;    
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 85vh;
+  width: 60%;
+  padding: 50px;
+  color: blanchedalmond;
+  background-color: #072540;
+}
+
+.game-title-flareon-h1 {
+    margin: 0;
+    margin-bottom: 0;
+    font-size: 80px;
+    font-family: 'machine-gunk';
+    letter-spacing: 8px;
+    color: gold;
+}
+
+.game-title-flareon-h2 {
+  margin: 0 30px 0px 180px;
+  font-style: italic;
+  font-family: 'machine-gunk';
+  font-size: 30px;
+  letter-spacing: 3px;
+  color: darkred;
+}
+
+.game-menu .game-menu-image {
+  height: 180px;
+}
+
+.game-menu .difficulty {
+  padding: 0px 0 22px;
+}
+
+.game-menu .game-instructions {
+  margin: 0;
+  font-family: monospace;
+  font-size: 13px;
+  display: block;
+  height: 200px;
+}
+
+.active-button {
+  background-color: gold;
+
+}
+
+.game-menu .difficulty-button {
+  font-family: 'machine-gunk';
+  letter-spacing: 3px;
+  padding: 15px;
+  border: none;
+  box-shadow: none;
+  font-size: 15px;
+  margin: 0 12px;
+  border-radius: 5px;
+  min-width: 100px;
+}
+
+.game-menu .difficulty-button:hover {
+  background-color: lightskyblue;
+}
+
+.game-menu .start-game-button button {
+  font-family: 'machine-gunk';
+  letter-spacing: 3px;
+  background-color: lightskyblue;
+  padding: 15px;
+  min-width: 180px;
+  border: none;
+  box-shadow: none;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  color: black;
+}
+
+.game-menu .start-game-button button:hover {
+  background-color: gold;
+}
+
+
+
+.game-won {
+  display: none;     /* should be flex   */
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 85vh;
+  width: 60%;
+  padding: 50px;
+  color: blanchedalmond;
+  background-color: #072540;
+}
+
+.game-won h1 {
+  font-family: 'machine-gunk';
+  letter-spacing: 8px;
+  color: gold;
+  font-size: 50px;
+  margin: 0;
+}
+
+.game-won .final-score2 {
+  margin-bottom: 20px;
+  font-family: 'atari-classic-chucnky';
+  color: greenyellow;
+}
+
+.game-won div {
+  /* height: 100px; */
+  margin-bottom: 15px;
+}
+
+.game-won .game-menu-image {
+  height: 250px;
+  margin-bottom: 20px;
+}
+
+.game-won button {
+  font-family: 'machine-gunk';
+  letter-spacing: 3px;
+  color: black;
+  background-color: lightskyblue;
+  padding: 15px;
+  min-width: 180px;
+  border: none;
+  box-shadow: none;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.game-won button:hover {
+  background-color: gold;
+}
+
+.game-over {
+  display: none;     /* should be flex   */
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 85vh;
+  width: 60%;
+  color: blanchedalmond;
+  background-color: #072540;
+}
+
+.game-over h1 {
+  font-family: 'machine-gunk';
+  font-size: 90px;
+  letter-spacing: 8px;
+  color: darkred;
+  margin: 0;
+}
+
+.game-over div {
+  margin: 10px;
+}
+
+.game-over button {
+  font-family: 'machine-gunk';
+  letter-spacing: 3px;
+  background-color: lightskyblue;
+  padding: 15px;
+  min-width: 180px;
+  border: none;
+  box-shadow: none;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  color: black;
+}
+.game-over button:hover {
+  background-color: gold;
+}
+
+.game-over .final-score {
+  height: 0;
+  margin: 10px;
+  font-family: 'atari-classic-chucnky';
+  color: greenyellow;
+}
+
+.game-over .game-menu-image {
+  height: 300px;
+}
+
+
+
+
+.game-wrapper {
+  height: 90vh;
+  display: none;  /* should be flex */
+  flex-direction: column;
+  align-items: center;
+}
+
+.grid {
+  align-items: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: center;
+  height: 590px;
+  width: 600px;
+}
+
+.grid div {
+  border: 1px solid lightgrey; 
+  flex-grow: 1;
+  height: 9.09090909091%;
+  width: 11.1111111111%;
+}
+
+.controls-wrapper {
+  font-family: 'atari-classic-chucnky';
+  letter-spacing: 2px;
+  align-items: unset;
+  align-self: stretch;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-around;
+  background-color: #072540;
+  padding: 10px;
+  margin-bottom: 0;
+}
+
+.controls-wrapper p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: floralwhite;
+}
+
+.reset-button button {
+  font-family: 'machine-gunk';
+  letter-spacing: 3px;
+  background-color: lightskyblue;
+  font-size: 16px;
+  margin-top: 7px;
+  min-width: 80px;
+  padding: 10px;
+  border: none;
+  box-shadow: none;
+  border-radius: 5px;
+}
+
+.reset-button button:hover {
+  background-color: gold;
+}
+    
+    /* flareon */ 
+.grid div.flareonIdle {
+  background-image: url('/src/assets/flareonIdle.gif');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.grid div.flareonRunRight {
+  background-image: url('/src/assets/flareonRight.gif');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+} 
+.grid div.flareonRunLeft {
+  background-image: url('/src/assets/flareonLeft.gif');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.grid div.flareonRunUp {
+  background-image: url('/src/assets/flareonUp.gif');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.grid div.flareonRunDown {
+  background-image: url('/src/assets/flareonUp.gif');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  }
 
 // // /* enemies */
 // // .grid div.lugiaEnemy {
