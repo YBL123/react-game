@@ -65,7 +65,6 @@ class App extends React.Component {
     // document.getElementById('score-display').innerHTML = playerScore
     // * Event listeners
     window.addEventListener('keydown', this.handleKeyDown)
-    this.addPlayer({flareona})
     this.addPlayer('flareonIdle') //* adds player
     // loopGame() //* loops game
   }
@@ -78,14 +77,13 @@ class App extends React.Component {
     let cells = []
     const width = 9
     const cellCount = (width * width) + (width * 2)
+
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
       cell.textContent = i //take out later
       grid.appendChild(cell)
       cells.push(cell)
     }
-    console.log('this is cells', this.cells)
-    // this.cells[startingPosition].classList.add('flareonIdle')
   }
 
   resetGame = () => {
@@ -94,20 +92,20 @@ class App extends React.Component {
     const gameOver = document.querySelector('.game-over')
     const gameWon = document.querySelector('.game-won')
 
-        // highScoreTable.style.display = 'none'
-        gameWrapper.style.display = 'none'
-        gameMenu.style.display = 'flex'
-        // difficultyButtons.forEach(button => {   //* removes active button class from all so all buttons start without it.
-        //   if (button.value === 'easy') {
-        //     button.classList.add('active-button')
-        //   } else {
-        //     button.classList.remove('active-button')
-        //   }
-        // })
-        gameOver.style.display = 'none'
-        gameWon.style.display = 'none'
-        // gameSounds.stopBackGroundSound()  //* stop background sound
-        this.resetComponents()
+    // highScoreTable.style.display = 'none'
+    gameWrapper.style.display = 'none'
+    gameMenu.style.display = 'flex'
+    // difficultyButtons.forEach(button => {   //* removes active button class from all so all buttons start without it.
+    //   if (button.value === 'easy') {
+    //     button.classList.add('active-button')
+    //   } else {
+    //     button.classList.remove('active-button')
+    //   }
+    // })
+    gameOver.style.display = 'none'
+    gameWon.style.display = 'none'
+    // gameSounds.stopBackGroundSound()  //* stop background sound
+    this.resetComponents()
   }
 
   resetComponents = () => {
@@ -176,12 +174,17 @@ class App extends React.Component {
 
   //* add player function starts here
   addPlayer = (playerDirection) => {
+    const grid = document.querySelector('.grid')
+    let flareonOnGrid = grid
     let cells = []
     let flareonPosition = 94
-
-    // cells[flareonPosition].classList.add(playerDirection, {flareona}) 
+    flareonOnGrid.parentElement.classList.add('.flareonIdle', playerDirection)
   }
 
+//   var mykey= document.getElementById('mykey');
+// mykey.onclick = function() {
+//     mykey.parentElement.classList.add("green");
+// };
 
   render() {
     return (
@@ -242,7 +245,7 @@ class App extends React.Component {
               <p>Lives: <span id="player-lives" value="easy">5</span></p>
               <p>Score: <span id="score-display">0</span></p>
             </div>
-            <div className="grid">
+            <div className="grid" id="grid">
             </div>
             <div className="reset-button">
               <button id={this.resetButton} className="reset" onClick={this.resetGame}>reset</button>
