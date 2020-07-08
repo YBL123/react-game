@@ -177,6 +177,7 @@ class App extends React.Component {
     const grid = document.querySelector('.grid')
     let flareonOnGrid = grid
     let cells = []
+    cells[94].classList.add('flareonIdle')
     let flareonPosition = 94
     flareonOnGrid.parentElement.classList.add('.flareonIdle', playerDirection)
   }
