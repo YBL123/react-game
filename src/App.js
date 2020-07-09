@@ -177,15 +177,15 @@ class App extends React.Component {
     const grid = document.querySelector('.grid')
     let flareonOnGrid = grid
     let cells = []
-    cells[94].classList.add('flareonIdle')
     let flareonPosition = 94
-    flareonOnGrid.parentElement.classList.add('.flareonIdle', playerDirection)
-  }
 
-//   var mykey= document.getElementById('mykey');
-// mykey.onclick = function() {
-//     mykey.parentElement.classList.add("green");
-// };
+    console.log('this is flareonOnGrid', flareonOnGrid)
+    console.log('this is grid', grid)
+    console.log('this is cells', cells)
+    console.log('this is flareona', {flareona})
+    console.log('this is playerDirection', playerDirection)
+    cells[flareonPosition].classList.add(playerDirection, 'flareona')
+  }
 
   render() {
     return (
